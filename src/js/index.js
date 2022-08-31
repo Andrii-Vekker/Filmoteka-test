@@ -2,6 +2,7 @@ import { spinner } from './spinner';
 import { paganation } from './pagination';
 import { bodyRef, toggleRef, footerDarktheme } from './themeChange';
 import { form, gallery, paginationEl, footerTeamLink } from './data/refs';
+import { gnrArr } from './fetch-films';
 
 import { Notify } from 'notiflix';
 Notify.init({

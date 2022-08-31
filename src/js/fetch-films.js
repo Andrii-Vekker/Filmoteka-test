@@ -1,6 +1,7 @@
 import axios from 'axios';
 const KEY = 'fd7341fdf0f2e94a335192ece09ea376';
 
+
 export let gnrArr = [];
 
 // функция для пагинации

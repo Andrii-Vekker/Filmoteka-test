@@ -1,16 +1,21 @@
 import { gallery, backdrop } from './data/refs';
 import { renderModalCard, renderMyLibModalCard } from './renderModalCard';
 import { onEscPress } from './modal';
-import { getGenres, getG } from './getGenres';
+// import { getGenres, getG } from './getGenres';
+import { gnrArr } from "./fetch-films"
+import {getGenres, getGenresLib} from "./getGenres"
 
 // рендер трендовых фильмов
 
+
+ 
 function renderTrandFilms(data) {
   gallery.innerHTML = '';
   const markup = data
     .map(
       ({ poster_path, title, id, genre_ids, release_date, vote_average }) => {
-        const getNames = getGenres(genre_ids);
+ const getNames = getGenres(genre_ids, gnrArr)
+ 
         const year = parseInt(release_date);
         const rating = vote_average.toFixed(1);
         return `<li class="gallery__item" data-id=${id}>
@@ -62,7 +67,7 @@ function renderSearchFilms(data) {
   const markup = data
     .map(
       ({ poster_path, title, id, genre_ids, release_date, vote_average }) => {
-        const getNames = getGenres(genre_ids);
+        const getNames = getGenres(genre_ids, gnrArr)
         const year = parseInt(release_date);
         const rating = vote_average.toFixed(1);
 
@@ -107,10 +112,11 @@ function renderSearchFilms(data) {
   }
 }
 
+
+
 function renderWachLib(data) {
   const { poster_path, title, id, genres, release_date, vote_average } = data;
-
-  const genreName = getG(genres);
+const getNameLib = getGenresLib(genres)
   const year = parseInt(release_date);
 
   const markup = `<li class="gallery__item" data-id=${id}>
@@ -128,7 +134,7 @@ function renderWachLib(data) {
     </div>
     <div class="gallery__thumb" data-id=${id}>
         <h3 class="gallery__name" data-id=${id}>${title}</h3>
-        <p class="gallery__genres" data-id=${id}>${genreName} </p>
+        <p class="gallery__genres" data-id=${id}>${getNameLib} </p>
         <span class="gallery__year" data-id=${id}>${year ? year : 'n/a'}</span>
     </div>
 </li>`;
