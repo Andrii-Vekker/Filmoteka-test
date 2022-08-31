@@ -2,10 +2,10 @@
   "name": "Filmoteka-test",
   "version": "2.0.0",
   "description": "",
-  "homepage": "",
+  "homepage": "https://andrii-vekker.github.io/Filmoteka-test/",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /group-12-js-project/"
+    "build": "parcel build src/*.html --public-url /Filmoteka-test/"
   },
   "repository": {
     "type": "git",
