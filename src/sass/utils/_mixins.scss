@@ -1,0 +1,11 @@
+@mixin size ($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin font-style ($fw, $fs, $lh, $ls) {
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: calc($lh/$fs);
+    letter-spacing: $ls;
+}

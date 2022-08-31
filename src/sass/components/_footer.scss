@@ -1,0 +1,207 @@
+.footer {
+  background-color: #F7F7F7;
+}
+
+.footer__discription::before {
+  content: '|';
+  color: #545454;
+}
+
+.footer__discription::after {
+  content: '|';
+  color: #545454;
+}
+
+.footer__box {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  color: #545454;
+
+  justify-content: center;
+  text-align: center;
+
+  @media screen and (max-width: 767px) {
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.14;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.18;
+  }
+}
+
+.footer__stringDown {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  @media screen and (max-width: 767px) {
+    margin-top: 10px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-left: 3px;
+  }
+
+  .footer__link:hover, :focus{
+    color: var(--accent-color);
+  }
+
+}
+
+//!============ heart
+.heart {
+  animation: heartbeat 1s infinite;
+  background-color: var(--accent-color);
+  display: inline-block;
+  height: 12px;
+  margin: 0 12px;
+  top: 0;
+  transform: rotate(-45deg);
+  width: 12px;
+
+  &:before,
+  &:after {
+    content: '';
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    height: 12px;
+    position: absolute;
+    width: 12px;
+  }
+
+  &:before {
+    top: -8px;
+    left: 0;
+  }
+
+  &:after {
+    left: 8px;
+    top: 0;
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(.75) rotate(-45deg);
+    ;
+  }
+
+  20% {
+    transform: scale(1) rotate(-45deg);
+    ;
+  }
+
+  40% {
+    transform: scale(.75) rotate(-45deg);
+    ;
+  }
+
+  60% {
+    transform: scale(1) rotate(-45deg);
+    ;
+  }
+
+  80% {
+    transform: scale(.75) rotate(-45deg);
+    ;
+  }
+
+  100% {
+    transform: scale(.75) rotate(-45deg);
+    ;
+  }
+}
+
+
+//    ------- Modal form ------
+.team__modal {
+  position: fixed;
+  z-index: 3;
+top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  width: 100%;
+
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  @media screen and (min-width:1280px){
+    width: 950px;
+    height: 95%;
+    overflow: hidden;
+  }
+ .team__list {
+   display: grid;
+    grid-gap: 20px;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media screen and (min-width: 1240px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+   .team__item{
+        position: relative;
+        padding-bottom: 30px;
+        }
+ } 
+}
+  
+ 
+  .team__item:hover {
+      transform: scale(1.03);
+      box-shadow: -5px -5px 5px -5px rgba(34, 60, 80, 0.6);
+    }
+
+.team__img {
+  display: block;
+    height: 100%;
+    max-width: 100%;
+    border-radius: 5px 5px 0px 0px;
+    margin-bottom: 10px;
+}
+.team__info {
+  text-align: center;
+  @include font-style(500, 12px, 14px, 0);
+  color: var(--extra-color);
+  margin-bottom: 20px;
+}
+.team__info > li{
+  margin-right: 4px;
+}
+.team__name, .team__role {
+  display: inline-block;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--accent-color);
+}
+
+.team__github, .team__phone{
+  @include size(12px, 12px);
+   fill: var(--main-color);
+}
+.team__github{
+  margin-right: 4px;
+}
+.team__icons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  background: var(--accent-color);
+  line-height: 0;
+  padding: 4px 8px;
+  border-radius: 0px 5px 0px 5px;
+}
+
